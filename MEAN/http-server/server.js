@@ -58,6 +58,17 @@ app.get('/', function(req, res){
     res.sendfile(__dirname + '/index.html');
 });
 
+app.route('/login');
+    //show the form (GET http://localhost:1337/login)
+    app.get(function(req, res){
+        res.send('this is the login form');
+
+    });
+        app.post(function(req, res){
+            console.log('processing');
+            res.send('processing the login form!');
+        });
+
 //start the server
 app.listen(1337);
 console.log('1337 is the magic port');
